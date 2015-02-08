@@ -11,6 +11,8 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'font-awesome-rails'
+gem 'simple_form'
+gem 'devise'
 
 
 # Use Uglifier as compressor for JavaScript assets
