@@ -1,6 +1,19 @@
+
 %tr
   %td= task.content
   %td= task.state
   %td= link_to 'Show', task
   %td= link_to 'Edit', edit_task_path(task)
   %td= link_to 'Destroy', task, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  - case task.state
+    - when 'to_do'
+      - new_label = 'Mark as doing'
+      - new_state = 'doing'
+    - when 'doing'
+      - new_label = 'Mark as done'
+      - new_state = 'done'
+      %td= link_to 'Mark as ToDo', change_task_path(task, state: 'to_do'), method: :put
+    - else
+      - new_label = 'Mark as doing'
+      - new_state = 'doing'
+  %td= link_to new_label, change_task_path(task, state: new_state), method: :put
