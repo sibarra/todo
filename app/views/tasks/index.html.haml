@@ -1,31 +1,15 @@
-%h1 ToDo tasks
-%table
-  %tr
-    %th Content
-    %th State
-    %th{ colspan: '3'}
-  = render @to_do
+.row
+  .col-md-4
+    %h1.text-center Todo
+    = render @to_do
 
-%br
+  .col-md-4
+    %h1.text-center Doing
+    = render @doing
 
-%h1 Doing tasks
-%table
-  %tr
-    %th Content
-    %th State
-    %th{ colspan: '3'}
-  = render @doing
-
-%br
-
-%h1 Done tasks
-%table
-  %tr
-    %th Content
-    %th State
-    %th{ colspan: '3'}
-  = render @done
-
+  .col-md-4
+    %h1.text-center Done
+    = render @done
 %br
 
 = link_to 'New Task', new_task_path
