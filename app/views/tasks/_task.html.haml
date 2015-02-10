@@ -6,7 +6,7 @@
       ago
     = link_to "x", task, method: :delete, data: {confirm: 'Are you sure?'}, class: 'pull-right'
   .panel-body
-    = task.content
+    = raw(task.content_html)
   .panel-footer.text-center
     .btn-group.btn-group-justified
       - if task.state == 'doing'
